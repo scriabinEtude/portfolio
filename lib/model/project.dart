@@ -1,0 +1,49 @@
+import 'package:portfolio/model/company.dart';
+
+enum DevEnv {
+  flutter('Flutter'),
+  vscode('Vscode'),
+  java('Java'),
+  spring('Spring'),
+  springBoot("Spring Boot"),
+  jsp('Jsp'),
+  myBatis('MyBatis'),
+  plsql('PL/SQL'),
+  procedure('Procedure'),
+  tomcat('Tomcat'),
+  git('Git'),
+  github('Git-Hub'),
+  gitlab('Git-Lab'),
+  svn('Svn'),
+  slack('Slack'),
+  outlook('Outlook'),
+  notion('Notion'),
+  zeplin('Zeplin'),
+  jpa('JPA'),
+  oracle("Oracle"),
+  mysql("Mysql"),
+  springBatch('Spring Batch');
+
+  final String title;
+  const DevEnv(this.title);
+}
+
+class Project {
+  final String title;
+  final List<String> sampleImages;
+  final List<DevEnv> devEnvs;
+  final List<String> functions;
+  final List<String> achievements;
+  Company? company;
+
+  Project({
+    required this.title,
+    required this.sampleImages,
+    required this.devEnvs,
+    required this.functions,
+    required this.achievements,
+    this.company,
+  });
+
+  String get devEnvStrnig => devEnvs.map((d) => d.title).join(", ");
+}
