@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:portfolio/model/indicators.dart';
 import 'package:portfolio/model/intro.dart';
 import 'package:portfolio/screen/indicators/indicators_widget.dart';
+import 'package:portfolio/widget/media_query.dart';
 import 'package:portfolio/widget/section.dart';
 import 'package:portfolio/widget/text.dart';
 import 'package:responsive_builder/responsive_builder.dart';
@@ -32,14 +33,14 @@ class IntroWidget extends StatelessWidget {
         children: [
           ScreenTypeLayout.builder(
             breakpoints: const ScreenBreakpoints(
-              desktop: 800,
-              tablet: 679,
+              desktop: 840,
+              tablet: 710,
               watch: 200,
             ),
             desktop: (context) => _SummaryAndImage(
               intro: intro,
               mainWidth: 920,
-              imageWidth: 300,
+              imageWidth: 340,
             ),
             tablet: (context) => _SummaryAndImage(
               intro: intro,

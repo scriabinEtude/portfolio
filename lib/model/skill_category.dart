@@ -10,7 +10,4 @@ class SkillCategory {
     required this.percent,
     required this.details,
   }) : assert(percent <= 1, "percent can not over 1");
-
-  /// ### ex) 90%
-  String get percentage => "${(percent * 100).toInt()}%";
 }

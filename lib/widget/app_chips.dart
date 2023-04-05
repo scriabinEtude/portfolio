@@ -21,13 +21,13 @@ class AppChips extends StatelessWidget {
       decoration: BoxDecoration(
         border: Border.all(
           color: active
-              ? Theme.of(context).colorScheme.inversePrimary.withOpacity(1)
-              : Theme.of(context).colorScheme.inverseSurface.withOpacity(0.4),
-          width: 0.3,
+              ? Theme.of(context).colorScheme.inversePrimary.withOpacity(0.8)
+              : Theme.of(context).colorScheme.inverseSurface.withOpacity(0.2),
+          width: 1,
         ),
         borderRadius: BorderRadius.circular(4),
       ),
-      child: active ? T.h6(label) : T.b3(context, label),
+      child: active ? T.h5(label) : T.b1(context, label),
     );
   }
 }

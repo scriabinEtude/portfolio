@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:portfolio/common/key.dart';
 import 'package:portfolio/model/company.dart';
 import 'package:portfolio/model/project.dart';
+import 'package:portfolio/util/double.dart';
 import 'package:portfolio/util/term.dart';
 import 'package:portfolio/widget/app_pageview.dart';
 import 'package:portfolio/widget/markdown.dart';
@@ -242,12 +243,29 @@ class _Details extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             T.b1(context, MD.ol("개발 환경: ${project.devEnvStrnig}")),
+            if (project.contribution != null)
+              Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  T.b1(context, MD.ol("인원: ${project.contribution}")),
+                  T.b1(
+                      context,
+                      MD.ol(
+                          "직무 기여도: ${project.contribution!.contribution.percentDisplay}")),
+                ],
+              ),
             const SizedBox(height: 10),
-            T.b1(context, MD.ol("신규 기능 개발: ")),
+            T.b1(context, MD.ol("기능 개발: ")),
             T.b1(context, MD.olTabs(project.functions)),
-            const SizedBox(height: 10),
-            T.b1(context, MD.ol("주요 성과: ")),
-            T.b1(context, MD.olTabs(project.achievements)),
+            if (project.achievements.isNotEmpty)
+              Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  const SizedBox(height: 10),
+                  T.b1(context, MD.ol("주요 성과: ")),
+                  T.b1(context, MD.olTabs(project.achievements)),
+                ],
+              ),
           ],
         ),
       ],

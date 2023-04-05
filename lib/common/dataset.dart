@@ -1,6 +1,7 @@
 import 'package:portfolio/common/key.dart';
 import 'package:portfolio/model/community.dart';
 import 'package:portfolio/model/company.dart';
+import 'package:portfolio/model/contribution.dart';
 import 'package:portfolio/model/hire_me.dart';
 import 'package:portfolio/model/indicators.dart';
 import 'package:portfolio/model/intro.dart';
@@ -134,6 +135,13 @@ final dataSetKor = DataSet(
               "Pub.dev에 자체 라이브러리 배포",
               "레거시 코드 리팩토링",
             ],
+            contribution: Contribution(
+              front: 2,
+              back: 1,
+              pd: 1,
+              design: 1,
+              contribution: 0.7,
+            ),
           ),
           Project(
             title: "그랫 - 동물병원용",
@@ -159,37 +167,50 @@ final dataSetKor = DataSet(
               "진료시간 및 병원 정보 관리",
             ],
             achievements: [],
+            contribution: Contribution(
+              front: 1,
+              back: 1,
+              pd: 1,
+              design: 1,
+              contribution: 1,
+            ),
           ),
           Project(
-            title: "그랫 - 드라이버용",
-            sampleImages: [
-              'assets/images/gratdriver_login.webp',
-              'assets/images/gratdriver_shifty.webp',
-              'assets/images/gratdriver_list.webp',
-              'assets/images/gratdriver_detail.webp',
-            ],
-            devEnvs: [
-              DevEnv.flutter,
-              DevEnv.vscode,
-              DevEnv.git,
-              DevEnv.github,
-              DevEnv.slack,
-              DevEnv.notion,
-              DevEnv.zeplin,
-            ],
-            functions: [
-              "초기 기획 및 설계, 앱 등록부터 신규 기능개발까지 전 개발과정 참여",
-              "택시 드라이버 스케쥴 확인 서비스",
-              "택시 실시간 위치 백그라운드 트래킹",
-              "외부 앱 연동 (Tmap)",
-              "다중 파일 업로드",
-              "관리자 기능 추가",
-            ],
-            achievements: [
-              "개발 리딩 경험",
-              "TestFlight 자동 배포 시스템 구축",
-            ],
-          ),
+              title: "그랫 - 드라이버용",
+              sampleImages: [
+                'assets/images/gratdriver_login.webp',
+                'assets/images/gratdriver_shifty.webp',
+                'assets/images/gratdriver_list.webp',
+                'assets/images/gratdriver_detail.webp',
+              ],
+              devEnvs: [
+                DevEnv.flutter,
+                DevEnv.vscode,
+                DevEnv.git,
+                DevEnv.github,
+                DevEnv.slack,
+                DevEnv.notion,
+                DevEnv.zeplin,
+              ],
+              functions: [
+                "초기 기획 및 설계, 앱 등록부터 신규 기능개발까지 전 개발과정 참여",
+                "택시 드라이버 스케쥴 확인 서비스",
+                "택시 실시간 위치 백그라운드 트래킹",
+                "외부 앱 연동 (Tmap)",
+                "다중 파일 업로드",
+                "관리자 기능 추가",
+              ],
+              achievements: [
+                "개발 리딩 경험",
+                "TestFlight 자동 배포 시스템 구축",
+              ],
+              contribution: Contribution(
+                front: 1,
+                back: 1,
+                pd: 1,
+                design: 1,
+                contribution: 1,
+              )),
         ],
       ),
       Company(

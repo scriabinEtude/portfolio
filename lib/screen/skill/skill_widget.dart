@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:portfolio/common/color.dart';
 import 'package:portfolio/model/skill_category.dart';
+import 'package:portfolio/util/double.dart';
 import 'package:portfolio/widget/app_chips.dart';
 import 'package:portfolio/widget/media_query.dart';
 import 'package:portfolio/widget/section.dart';
@@ -52,7 +53,7 @@ class _SkillContainer extends StatelessWidget {
         const SizedBox(height: 15),
         _Progress(
           percent: skill.percent,
-          percentage: skill.percentage,
+          percentage: skill.percent.percentDisplay,
         ),
         const SizedBox(height: 5),
         SizedBox(
