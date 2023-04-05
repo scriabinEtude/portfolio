@@ -97,13 +97,12 @@ class _CommunityButton extends StatelessWidget {
                 height: 18,
               ),
               const SizedBox(width: 12),
-              Text(
-                overflow: TextOverflow.fade,
+              SelectableText(
                 community.title,
                 style: const TextStyle(
                   color: Colors.black,
                 ),
-              )
+              ),
             ],
           ),
         ),
