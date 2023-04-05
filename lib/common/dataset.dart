@@ -102,7 +102,7 @@ final dataSetKor = DataSet(
           Project(
             title: "그랫 - 펫택시",
             sampleImages: [
-              'assets/images/grat_main.png',
+              'assets/images/grat_home.png',
               'assets/images/grat_location.webp',
               'assets/images/grat_summary.webp',
               'assets/images/grat_gallery.webp',
