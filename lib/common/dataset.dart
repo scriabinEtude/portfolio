@@ -365,7 +365,7 @@ final dataSetKor = DataSet(
       description: "긍정적인 커뮤니케이션, 새로운 도전을 통해 Flutter 기술로 서비스를 만들 준비가 되어 있습니다.",
       communities: [
         Community(
-          title: 'scriabinetude87@gmail.com',
+          title: 'scriabinetude87',
           url: null,
           imagePath: "assets/images/logo_gmail_320.png",
         ),
