@@ -192,10 +192,11 @@ class _CompanyInfo extends StatelessWidget {
                 T.b2(context, MD.wrap(term.durationDisplay)),
               ],
             ),
-            const SizedBox(height: 5),
             T.b2(context, MD.dash(company.description)),
-            const SizedBox(height: 5),
             T.b2(context, MD.dash(company.position.title)),
+            const SizedBox(height: 10),
+            T.b2(context, MD.ol("직무 및 주요 성과")),
+            T.b2(context, MD.olTabs(company.achievements)),
           ],
         ),
       ),
@@ -255,7 +256,7 @@ class _Details extends StatelessWidget {
                 ],
               ),
             const SizedBox(height: 10),
-            T.b1(context, MD.ol("기능 개발: ")),
+            T.b1(context, MD.ol("주요 기능: ")),
             T.b1(context, MD.olTabs(project.functions)),
             if (project.achievements.isNotEmpty)
               Column(

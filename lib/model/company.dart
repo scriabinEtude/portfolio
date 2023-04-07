@@ -16,6 +16,7 @@ class Company {
   final DateTime endDate;
   final String description;
   final WorkPosition position;
+  final List<String> achievements;
   final List<Project> projects;
 
   Company({
@@ -25,6 +26,7 @@ class Company {
     required this.endDate,
     required this.description,
     required this.position,
+    required this.achievements,
     required this.projects,
   });
 
