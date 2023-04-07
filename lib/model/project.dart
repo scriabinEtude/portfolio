@@ -1,9 +1,11 @@
 import 'package:portfolio/model/company.dart';
 import 'package:portfolio/model/contribution.dart';
 import 'package:portfolio/model/store_url.dart';
+import 'package:portfolio/util/term.dart';
 
 class Project {
   final String title;
+  final Term? term;
   final List<String> sampleImages;
   final List<DevEnv> devEnvs;
   final List<String> functions;
@@ -14,6 +16,7 @@ class Project {
 
   Project({
     required this.title,
+    this.term,
     required this.sampleImages,
     required this.devEnvs,
     required this.functions,
@@ -25,6 +28,7 @@ class Project {
 
   String get devEnvStrnig => devEnvs.map((d) => d.title).join(", ");
   bool get isStoreUrl => storeUrl != null;
+  bool get isTerm => term != null;
 }
 
 enum DevEnv {

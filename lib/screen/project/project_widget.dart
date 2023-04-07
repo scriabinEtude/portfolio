@@ -241,36 +241,42 @@ class _ProjectDetails extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            T.b1(context, MD.ol("개발 환경: ${project.devEnvStrnig}")),
-            if (project.contribution != null)
-              Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  T.b1(context, MD.ol("인원: ${project.contribution}")),
-                  T.b1(
-                      context,
-                      MD.ol(
-                          "직무 기여도: ${project.contribution!.contribution.percentDisplay}")),
-                ],
-              ),
-            const SizedBox(height: 10),
-            T.b1(context, MD.ol("주요 기능: ")),
-            T.b1(context, MD.olTabs(project.functions)),
-            if (project.achievements.isNotEmpty)
-              Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  const SizedBox(height: 10),
-                  T.b1(context, MD.ol("주요 성과: ")),
-                  T.b1(context, MD.olTabs(project.achievements)),
-                ],
-              ),
-          ],
-        ),
+        if (project.isTerm)
+          Column(
+            children: [
+              T.b1(
+                  context,
+                  MD.ol(
+                      "기간: ${project.term!.termDisplay} (${project.term!.durationDisplay})")),
+              const SizedBox(height: 10),
+            ],
+          ),
+        T.b1(context, MD.ol("개발 환경: ${project.devEnvStrnig}")),
+        if (project.contribution != null)
+          Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              T.b1(context, MD.ol("인원: ${project.contribution}")),
+              T.b1(
+                  context,
+                  MD.ol(
+                      "직무 기여도: ${project.contribution!.contribution.percentDisplay}")),
+            ],
+          ),
+        const SizedBox(height: 10),
+        T.b1(context, MD.ol("주요 기능: ")),
+        T.b1(context, MD.olTabs(project.functions)),
+        if (project.achievements.isNotEmpty)
+          Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              const SizedBox(height: 10),
+              T.b1(context, MD.ol("주요 성과: ")),
+              T.b1(context, MD.olTabs(project.achievements)),
+            ],
+          ),
       ],
     );
   }

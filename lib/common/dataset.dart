@@ -12,6 +12,7 @@ import 'package:portfolio/model/pubdev.dart';
 import 'package:portfolio/model/skill.dart';
 import 'package:portfolio/model/skill_category.dart';
 import 'package:portfolio/model/store_url.dart';
+import 'package:portfolio/util/term.dart';
 
 class DataSet {
   List<Menu> menus;
@@ -112,6 +113,10 @@ final dataSetKor = DataSet(
         projects: [
           Project(
             title: "그랫 - 펫택시",
+            term: Term(
+              start: DateTime(2022, 03, 01),
+              end: DateTime(2023, 04, 15),
+            ),
             sampleImages: [
               'assets/images/grat_home.png',
               'assets/images/grat_location.webp',
@@ -157,6 +162,10 @@ final dataSetKor = DataSet(
           ),
           Project(
             title: "그랫 - 드라이버용",
+            term: Term(
+              start: DateTime(2022, 08, 01),
+              end: DateTime(2023, 04, 15),
+            ),
             sampleImages: [
               'assets/images/gratdriver_login.webp',
               'assets/images/gratdriver_shifty.webp',
@@ -200,6 +209,10 @@ final dataSetKor = DataSet(
           ),
           Project(
             title: "그랫 - 동물병원용",
+            term: Term(
+              start: DateTime(2022, 03, 01),
+              end: DateTime(2022, 08, 15),
+            ),
             sampleImages: [
               'assets/images/gratvet_main.png',
               'assets/images/gratvet_reserve.png',
