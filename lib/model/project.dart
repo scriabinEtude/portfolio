@@ -1,5 +1,6 @@
 import 'package:portfolio/model/company.dart';
 import 'package:portfolio/model/contribution.dart';
+import 'package:portfolio/model/store_url.dart';
 
 class Project {
   final String title;
@@ -9,6 +10,7 @@ class Project {
   final List<String> achievements;
   Company? company;
   final Contribution? contribution;
+  final StoreUrl? storeUrl;
 
   Project({
     required this.title,
@@ -18,9 +20,11 @@ class Project {
     required this.achievements,
     this.company,
     this.contribution,
+    this.storeUrl,
   });
 
   String get devEnvStrnig => devEnvs.map((d) => d.title).join(", ");
+  bool get isStoreUrl => storeUrl != null;
 }
 
 enum DevEnv {

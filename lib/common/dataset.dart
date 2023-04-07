@@ -11,6 +11,7 @@ import 'package:portfolio/model/project.dart';
 import 'package:portfolio/model/pubdev.dart';
 import 'package:portfolio/model/skill.dart';
 import 'package:portfolio/model/skill_category.dart';
+import 'package:portfolio/model/store_url.dart';
 
 class DataSet {
   List<Menu> menus;
@@ -147,43 +148,56 @@ final dataSetKor = DataSet(
               design: 1,
               contribution: 0.7,
             ),
+            storeUrl: StoreUrl(
+              ios:
+                  "https://apps.apple.com/kr/app/%EA%B7%B8%EB%9E%AB-%ED%8E%AB%ED%83%9D%EC%8B%9C/id1568500388",
+              android:
+                  "https://play.google.com/store/apps/details?id=kr.co.grat.gratapp",
+            ),
           ),
           Project(
-              title: "그랫 - 드라이버용",
-              sampleImages: [
-                'assets/images/gratdriver_login.webp',
-                'assets/images/gratdriver_shifty.webp',
-                'assets/images/gratdriver_list.webp',
-                'assets/images/gratdriver_detail.webp',
-              ],
-              devEnvs: [
-                DevEnv.flutter,
-                DevEnv.vscode,
-                DevEnv.git,
-                DevEnv.github,
-                DevEnv.slack,
-                DevEnv.notion,
-                DevEnv.zeplin,
-              ],
-              functions: [
-                "기사님들의 위치 정보 수집 및 실시간 전송",
-                "예약 일정 확인 및 일지 작성",
-                "외부 네비게이션 앱 호출",
-                "호출 시간 변경 등의 관리자 기능",
-              ],
-              achievements: [
-                "초기 기획 및 설계, 앱 등록부터 신규 기능개발까지 전 개발과정 참여",
-                "자동 배포 프로세스 구축으로 배포 시간 단축",
-                "위치 수집 주기 불량 개선으로 최대 하루에서 20분 이내로 단축",
-                "UI 컴포넌트 분리작업으로 유지보수 및 신규 개발 효율성 증가",
-              ],
-              contribution: Contribution(
-                front: 1,
-                back: 1,
-                pd: 1,
-                design: 1,
-                contribution: 1,
-              )),
+            title: "그랫 - 드라이버용",
+            sampleImages: [
+              'assets/images/gratdriver_login.webp',
+              'assets/images/gratdriver_shifty.webp',
+              'assets/images/gratdriver_list.webp',
+              'assets/images/gratdriver_detail.webp',
+            ],
+            devEnvs: [
+              DevEnv.flutter,
+              DevEnv.vscode,
+              DevEnv.git,
+              DevEnv.github,
+              DevEnv.slack,
+              DevEnv.notion,
+              DevEnv.zeplin,
+            ],
+            functions: [
+              "기사님들의 위치 정보 수집 및 실시간 전송",
+              "예약 일정 확인 및 일지 작성",
+              "외부 네비게이션 앱 호출",
+              "호출 시간 변경 등의 관리자 기능",
+            ],
+            achievements: [
+              "초기 기획 및 설계, 앱 등록부터 신규 기능개발까지 전 개발과정 참여",
+              "자동 배포 프로세스 구축으로 배포 시간 단축",
+              "위치 수집 주기 불량 개선으로 최대 하루에서 20분 이내로 단축",
+              "UI 컴포넌트 분리작업으로 유지보수 및 신규 개발 효율성 증가",
+            ],
+            contribution: Contribution(
+              front: 1,
+              back: 1,
+              pd: 1,
+              design: 1,
+              contribution: 1,
+            ),
+            storeUrl: StoreUrl(
+              ios:
+                  "https://apps.apple.com/kr/app/%EA%B7%B8%EB%9E%AB-%ED%8E%AB%ED%83%9D%EC%8B%9C-%EA%B8%B0%EC%82%AC%EB%8B%98%EC%9A%A9-%EC%95%B1/id1640427534",
+              android:
+                  "https://play.google.com/store/apps/details?id=kr.co.grat.petdriver",
+            ),
+          ),
           Project(
             title: "그랫 - 동물병원용",
             sampleImages: [
@@ -215,6 +229,12 @@ final dataSetKor = DataSet(
               pd: 1,
               design: 1,
               contribution: 1,
+            ),
+            storeUrl: StoreUrl(
+              ios:
+                  "https://apps.apple.com/kr/app/%EA%B7%B8%EB%9E%AB-%EC%88%98%EC%9D%98%EC%82%AC%EC%9A%A9-%EB%8F%99%EB%AC%BC%EB%B3%91%EC%9B%90-%EC%98%88%EC%95%BD%EA%B4%80%EB%A6%AC/id1621699080",
+              android:
+                  "https://play.google.com/store/apps/details?id=kr.co.grat.gratvet",
             ),
           ),
         ],

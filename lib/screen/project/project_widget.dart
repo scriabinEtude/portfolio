@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:portfolio/common/key.dart';
 import 'package:portfolio/model/company.dart';
 import 'package:portfolio/model/project.dart';
+import 'package:portfolio/model/store_url.dart';
 import 'package:portfolio/util/double.dart';
 import 'package:portfolio/util/term.dart';
 import 'package:portfolio/widget/app_pageview.dart';
@@ -10,6 +11,7 @@ import 'package:portfolio/widget/media_query.dart';
 import 'package:portfolio/widget/section.dart';
 import 'package:portfolio/widget/text.dart';
 import 'package:responsive_builder/responsive_builder.dart';
+import 'package:url_launcher/url_launcher_string.dart';
 
 class ProjectWidget extends StatelessWidget {
   const ProjectWidget({
@@ -56,10 +58,10 @@ class _PageViewMobile extends StatelessWidget {
           mainAxisSize: MainAxisSize.min,
           mainAxisAlignment: MainAxisAlignment.start,
           children: [
-            _ProjectTitle(title: project.title),
+            _ProjectTitle(project: project),
             _Screens(paths: project.sampleImages),
             const SizedBox(height: 50),
-            _Details(project: project),
+            _ProjectDetails(project: project),
           ],
         );
       },
@@ -87,8 +89,8 @@ class _PageViewDesktop extends StatelessWidget {
             SizedBox(width: MediaQuery.of(context).size.widthRatio08),
             Column(
               children: [
-                _ProjectTitle(title: project.title),
-                _Details(project: project),
+                _ProjectTitle(project: project),
+                _ProjectDetails(project: project),
               ],
             ),
           ],
@@ -231,8 +233,8 @@ class _Screens extends StatelessWidget {
   }
 }
 
-class _Details extends StatelessWidget {
-  const _Details({required this.project});
+class _ProjectDetails extends StatelessWidget {
+  const _ProjectDetails({required this.project});
 
   final Project project;
 
@@ -292,16 +294,52 @@ class _Logo extends StatelessWidget {
 }
 
 class _ProjectTitle extends StatelessWidget {
-  const _ProjectTitle({required this.title});
+  const _ProjectTitle({required this.project});
 
-  final String title;
+  final Project project;
 
   @override
   Widget build(BuildContext context) {
     return Column(
       children: [
-        T.h3(title),
+        Row(
+          children: [
+            T.h3(project.title),
+            const SizedBox(width: 10),
+            if (project.isStoreUrl) _GoToStore(storeUrl: project.storeUrl!),
+          ],
+        ),
         const SizedBox(height: 40),
+      ],
+    );
+  }
+}
+
+class _GoToStore extends StatelessWidget {
+  const _GoToStore({required this.storeUrl});
+  final StoreUrl storeUrl;
+
+  @override
+  Widget build(BuildContext context) {
+    return Row(
+      children: [
+        IconButton(
+            onPressed: () => launchUrlString(storeUrl.ios),
+            tooltip: "앱스토어로 이동",
+            padding: EdgeInsets.zero,
+            icon: const Icon(
+              Icons.apple,
+              size: 30,
+            )),
+        const SizedBox(width: 5),
+        IconButton(
+            onPressed: () => launchUrlString(storeUrl.android),
+            tooltip: "플레이스토어로 이동",
+            padding: EdgeInsets.zero,
+            icon: const Icon(
+              Icons.android,
+              size: 30,
+            )),
       ],
     );
   }
