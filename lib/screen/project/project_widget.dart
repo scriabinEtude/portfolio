@@ -303,6 +303,7 @@ class _ProjectTitle extends StatelessWidget {
     return Column(
       children: [
         Row(
+          mainAxisAlignment: MainAxisAlignment.center,
           children: [
             T.h3(project.title),
             const SizedBox(width: 10),
