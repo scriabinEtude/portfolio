@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:portfolio/cat_snackbar_screen.dart';
 import 'package:portfolio/common/color_schemes.dart';
-import 'package:portfolio/common/dataset.dart';
 import 'package:portfolio/provider/theme_provider.dart';
-import 'package:portfolio/screen/home_screen.dart';
 import 'package:provider/provider.dart';
 
 class MainApp extends StatelessWidget {
@@ -12,16 +11,23 @@ class MainApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      themeMode: Provider.of<ThemeProvider>(context).themeMode,
+      // themeMode: Provider.of<ThemeProvider>(context).themeMode,
+      // theme: ThemeData(
+      //   useMaterial3: true,
+      //   colorScheme: lightColorScheme,
+      // ),
+      // darkTheme: ThemeData(
+      //   useMaterial3: true,
+      //   colorScheme: darkColorScheme,
+      // ),
+      // home: HomeScreen(dataSet: dataSetKor),
       theme: ThemeData(
-        useMaterial3: true,
-        colorScheme: lightColorScheme,
+        splashColor: Colors.transparent,
+        splashFactory: NoSplash.splashFactory,
+        highlightColor: Colors.transparent,
+        hoverColor: Colors.transparent,
       ),
-      darkTheme: ThemeData(
-        useMaterial3: true,
-        colorScheme: darkColorScheme,
-      ),
-      home: HomeScreen(dataSet: dataSetKor),
+      home: const CatSnackBarScreen(),
     );
   }
 }
